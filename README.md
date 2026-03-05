@@ -4,7 +4,7 @@ A Next.js frontend for a wedding gift list. Guests can view gifts on cards and r
 
 ## Tech stack
 
-- **Next.js 15** (App Router) with TypeScript and Tailwind CSS
+- **Next.js 16** (App Router) with TypeScript and Tailwind CSS
 - **Neon (serverless Postgres)** for storing reservations — use Vercel’s Postgres/Neon integration when deploying on Vercel
 
 ## Local development
@@ -54,7 +54,11 @@ Edit the JSON file and redeploy (or restart the dev server) to change the list.
 
 2. Add a database:
    - In the Vercel project, go to **Storage** and create a **Postgres** database (Vercel uses Neon).
-   - This will set `POSTGRES_URL` (or similar) automatically for the project.
+   - Vercel will inject many environment variables, but the app only needs **`POSTGRES_URL`**. If the integration doesn't set that exact name, add it manually under **Settings → Environment Variables**:
+
+     | Variable | Value |
+     |----------|-------|
+     | `POSTGRES_URL` | The **pooled** Postgres connection string from Neon (the one ending in `?sslmode=require`) |
 
 3. Create the reservations table (once per database):
    - Open the database in the Vercel dashboard and run the SQL from **`scripts/init-db.sql`**, or run it in the Neon SQL editor if you use “Open in Neon”.
