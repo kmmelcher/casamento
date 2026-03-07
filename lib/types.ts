@@ -8,6 +8,8 @@ export type Gift = {
 export type Reservation = {
   id: number;
   gift_id: string;
+  user_uid: string;
+  user_email: string | null;
   reserved_by: string;
   message: string | null;
   created_at: string;

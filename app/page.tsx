@@ -10,19 +10,11 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <header className="border-b border-gray-200 bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-gray-900">
-            Wedding Gift List
-          </h1>
-          <p className="text-gray-600 mt-1">
-            Choose a gift and reserve it with your name. Each gift can only be
-            reserved once.
-          </p>
-        </div>
-      </header>
-
       <div className="max-w-6xl mx-auto px-4 py-8">
+        <p className="text-gray-600 mb-6">
+          Choose a gift and click to reserve it. Each gift can only be reserved
+          once.
+        </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {gifts.map((gift) => (
             <li key={gift.id}>

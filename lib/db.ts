@@ -9,15 +9,20 @@ function getSql() {
 export type ReservationRow = {
   id: number;
   gift_id: string;
+  user_uid: string;
+  user_email: string | null;
   reserved_by: string;
   message: string | null;
   created_at: Date;
 };
 
-export async function getReservationsMap(): Promise<Record<string, ReservationRow>> {
+export async function getReservationsMap(): Promise<
+  Record<string, ReservationRow>
+> {
   try {
     const sql = getSql();
-    const rows = await sql`SELECT id, gift_id, reserved_by, message, created_at FROM reservations`;
+    const rows =
+      await sql`SELECT id, gift_id, user_uid, user_email, reserved_by, message, created_at FROM reservations`;
     const map: Record<string, ReservationRow> = {};
     for (const row of rows as ReservationRow[]) {
       map[row.gift_id] = row;
@@ -28,16 +33,31 @@ export async function getReservationsMap(): Promise<Record<string, ReservationRo
   }
 }
 
+export async function getReservationsByUser(
+  userUid: string
+): Promise<ReservationRow[]> {
+  try {
+    const sql = getSql();
+    const rows =
+      await sql`SELECT id, gift_id, user_uid, user_email, reserved_by, message, created_at FROM reservations WHERE user_uid = ${userUid} ORDER BY created_at DESC`;
+    return rows as ReservationRow[];
+  } catch {
+    return [];
+  }
+}
+
 export async function insertReservation(
   giftId: string,
+  userUid: string,
+  userEmail: string | null,
   reservedBy: string,
   message?: string | null
 ): Promise<{ success: true } | { success: false; error: string }> {
   try {
     const sql = getSql();
     await sql`
-      INSERT INTO reservations (gift_id, reserved_by, message)
-      VALUES (${giftId}, ${reservedBy}, ${message ?? null})
+      INSERT INTO reservations (gift_id, user_uid, user_email, reserved_by, message)
+      VALUES (${giftId}, ${userUid}, ${userEmail}, ${reservedBy}, ${message ?? null})
     `;
     return { success: true };
   } catch (err) {
@@ -46,8 +66,35 @@ export async function insertReservation(
     }
     const msg = err instanceof Error ? err.message : String(err);
     if (msg.includes("unique") || msg.includes("duplicate")) {
-      return { success: false, error: "This gift has already been reserved." };
+      return {
+        success: false,
+        error: "This gift has already been reserved.",
+      };
     }
-    return { success: false, error: "Failed to reserve gift. Please try again." };
+    return {
+      success: false,
+      error: "Failed to reserve gift. Please try again.",
+    };
+  }
+}
+
+export async function deleteReservation(
+  giftId: string,
+  userUid: string
+): Promise<{ success: true } | { success: false; error: string }> {
+  try {
+    const sql = getSql();
+    const result = await sql`
+      DELETE FROM reservations WHERE gift_id = ${giftId} AND user_uid = ${userUid}
+    `;
+    if (result.length === 0 && (result as { count?: number }).count === 0) {
+      return { success: false, error: "Reservation not found." };
+    }
+    return { success: true };
+  } catch {
+    return {
+      success: false,
+      error: "Failed to remove reservation. Please try again.",
+    };
   }
 }
