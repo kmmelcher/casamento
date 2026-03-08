@@ -41,6 +41,7 @@ export async function reserveGift(
 
   if (result.success) {
     revalidatePath("/");
+    revalidatePath("/presentes");
     revalidatePath("/reservations");
   }
   return result;
@@ -58,6 +59,7 @@ export async function unreserveGift(
   const result = await deleteReservation(giftId, decoded.uid);
   if (result.success) {
     revalidatePath("/");
+    revalidatePath("/presentes");
     revalidatePath("/reservations");
   }
   return result;

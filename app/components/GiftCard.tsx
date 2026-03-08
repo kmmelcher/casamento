@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import type { Gift } from "@/lib/types";
 import type { ReservationRow } from "@/lib/db";
 import { reserveGift } from "@/app/actions";
@@ -16,6 +17,7 @@ type GiftCardProps = {
 export function GiftCard({ gift, reservation }: GiftCardProps) {
   const { user, signInWithGoogle, getIdToken } = useAuth();
   const [modalOpen, setModalOpen] = useState(false);
+  const router = useRouter();
 
   const isReserved = !!reservation;
   const isOwnReservation = user && reservation?.user_uid === user.uid;
@@ -33,6 +35,7 @@ export function GiftCard({ gift, reservation }: GiftCardProps) {
     if (!token) throw new Error("Not authenticated");
     const result = await reserveGift(gift.id, token);
     if (!result.success) throw new Error(result.error);
+    router.refresh();
   }
 
   const badge = isReserved ? (
