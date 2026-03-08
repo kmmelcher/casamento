@@ -76,7 +76,7 @@ export default function Home() {
               Acesse a lista de presentes
             </Link>
             <Link
-              href="/vaquinhas"
+              href="/presentes#vaquinha"
               className="inline-block rounded-full border-2 border-stone-800 text-stone-800 px-8 py-3 text-sm font-medium tracking-wide hover:bg-stone-800 hover:text-white transition-colors"
             >
               Contribua com uma vaquinha

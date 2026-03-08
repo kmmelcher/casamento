@@ -22,12 +22,6 @@ export function Header() {
             >
               Presentes
             </Link>
-            <Link
-              href="/vaquinhas"
-              className={`transition ${pathname === "/vaquinhas" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
-            >
-              Vaquinhas
-            </Link>
             {user && (
               <Link
                 href="/reservations"
@@ -86,12 +80,6 @@ export function Header() {
           className={`transition ${pathname === "/presentes" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
         >
           Presentes
-        </Link>
-        <Link
-          href="/vaquinhas"
-          className={`transition ${pathname === "/vaquinhas" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
-        >
-          Vaquinhas
         </Link>
         {user && (
           <Link
