@@ -15,6 +15,7 @@ import {
   type User,
 } from "firebase/auth";
 import { auth, googleProvider } from "@/lib/firebase";
+import { syncUser } from "@/app/actions";
 
 type AuthContextValue = {
   user: User | null;
@@ -34,6 +35,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser);
       setLoading(false);
+      if (firebaseUser) {
+        firebaseUser
+          .getIdToken()
+          .then((token) => syncUser(token))
+          .catch(() => {});
+      }
     });
     return unsubscribe;
   }, []);

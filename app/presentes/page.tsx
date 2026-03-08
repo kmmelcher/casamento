@@ -4,7 +4,7 @@ import { GiftCard } from "../components/GiftCard";
 
 export default async function PresentsPage() {
   const [gifts, reservationsMap] = await Promise.all([
-    Promise.resolve(getGifts()),
+    getGifts(),
     getReservationsMap(),
   ]);
 

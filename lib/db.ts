@@ -1,4 +1,5 @@
 import { neon } from "@neondatabase/serverless";
+import type { Gift, Vaquinha } from "./types";
 
 function getSql() {
   const url = process.env.POSTGRES_URL;
@@ -97,4 +98,98 @@ export async function deleteReservation(
       error: "Falha ao remover reserva. Por favor, tente novamente.",
     };
   }
+}
+
+// ── User functions ──────────────────────────────────────────────────
+
+export async function upsertUser(
+  uid: string,
+  email: string | null,
+  displayName: string | null
+): Promise<void> {
+  try {
+    const sql = getSql();
+    await sql`
+      INSERT INTO users (uid, email, display_name)
+      VALUES (${uid}, ${email}, ${displayName})
+      ON CONFLICT (uid) DO UPDATE SET
+        email = EXCLUDED.email,
+        display_name = EXCLUDED.display_name
+    `;
+  } catch {
+    // users table may not exist yet — silent fail
+  }
+}
+
+export async function isUserAdmin(uid: string): Promise<boolean> {
+  try {
+    const sql = getSql();
+    const rows = await sql`SELECT is_admin FROM users WHERE uid = ${uid}`;
+    return rows.length > 0 && rows[0].is_admin === true;
+  } catch {
+    return false;
+  }
+}
+
+// ── Gift DB functions ───────────────────────────────────────────────
+
+export async function getGiftsFromDb(): Promise<Gift[]> {
+  const sql = getSql();
+  const rows = await sql`SELECT id, title, description, image_url FROM gifts ORDER BY created_at ASC`;
+  return rows.map((row) => ({
+    id: row.id as string,
+    title: row.title as string,
+    description: row.description as string,
+    imageUrl: (row.image_url as string) || undefined,
+  }));
+}
+
+export async function insertGiftToDb(
+  id: string,
+  title: string,
+  description: string,
+  imageUrl?: string
+): Promise<void> {
+  const sql = getSql();
+  await sql`
+    INSERT INTO gifts (id, title, description, image_url)
+    VALUES (${id}, ${title}, ${description}, ${imageUrl ?? null})
+  `;
+}
+
+export async function deleteGiftFromDb(id: string): Promise<void> {
+  const sql = getSql();
+  await sql`DELETE FROM reservations WHERE gift_id = ${id}`;
+  await sql`DELETE FROM gifts WHERE id = ${id}`;
+}
+
+// ── Vaquinha DB functions ───────────────────────────────────────────
+
+export async function getVaquinhasFromDb(): Promise<Vaquinha[]> {
+  const sql = getSql();
+  const rows = await sql`SELECT id, title, description, image_url FROM vaquinhas ORDER BY created_at ASC`;
+  return rows.map((row) => ({
+    id: row.id as string,
+    title: row.title as string,
+    description: row.description as string,
+    imageUrl: (row.image_url as string) || undefined,
+  }));
+}
+
+export async function insertVaquinhaToDb(
+  id: string,
+  title: string,
+  description: string,
+  imageUrl?: string
+): Promise<void> {
+  const sql = getSql();
+  await sql`
+    INSERT INTO vaquinhas (id, title, description, image_url)
+    VALUES (${id}, ${title}, ${description}, ${imageUrl ?? null})
+  `;
+}
+
+export async function deleteVaquinhaFromDb(id: string): Promise<void> {
+  const sql = getSql();
+  await sql`DELETE FROM vaquinhas WHERE id = ${id}`;
 }

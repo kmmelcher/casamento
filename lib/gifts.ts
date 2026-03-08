@@ -1,6 +1,11 @@
 import type { Gift } from "./types";
 import giftsData from "@/data/gifts.json";
+import { getGiftsFromDb } from "./db";
 
-export function getGifts(): Gift[] {
-  return giftsData as Gift[];
+export async function getGifts(): Promise<Gift[]> {
+  try {
+    return await getGiftsFromDb();
+  } catch {
+    return giftsData as Gift[];
+  }
 }

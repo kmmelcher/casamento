@@ -5,6 +5,7 @@ import {
   insertReservation,
   deleteReservation,
   getReservationsByUser,
+  upsertUser,
   type ReservationRow,
 } from "@/lib/db";
 import { verifyIdToken } from "@/lib/firebase-admin";
@@ -75,7 +76,7 @@ export async function getUserReservations(
   if (!decoded) return [];
 
   const reservations = await getReservationsByUser(decoded.uid);
-  const gifts = getGifts();
+  const gifts = await getGifts();
   const giftsMap = new Map(gifts.map((g) => [g.id, g]));
 
   return reservations
@@ -85,4 +86,17 @@ export async function getUserReservations(
       return { reservation: r, gift };
     })
     .filter((item): item is UserReservationItem => item !== null);
+}
+
+export async function syncUser(idToken: string): Promise<void> {
+  try {
+    const decoded = await verifyIdToken(idToken);
+    await upsertUser(
+      decoded.uid,
+      decoded.email ?? null,
+      decoded.name ?? null
+    );
+  } catch {
+    // best-effort — silent fail
+  }
 }

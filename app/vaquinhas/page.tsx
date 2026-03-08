@@ -1,8 +1,8 @@
 import { getVaquinhas } from "@/lib/vaquinhas";
 import { VaquinhaCard } from "../components/VaquinhaCard";
 
-export default function VaquinhasPage() {
-  const vaquinhas = getVaquinhas();
+export default async function VaquinhasPage() {
+  const vaquinhas = await getVaquinhas();
 
   return (
     <main className="min-h-screen bg-gray-50">
