@@ -26,7 +26,7 @@ export default function Home() {
             Kilian &amp; Viviane
           </h1>
           <p className="mt-6 text-xl sm:text-2xl tracking-[0.3em] text-gray-700 font-light">
-            09 . 05 . 2026
+            09 · 05 · 2026
           </p>
         </div>
 
