@@ -62,18 +62,18 @@ export async function insertReservation(
     return { success: true };
   } catch (err) {
     if (!process.env.POSTGRES_URL) {
-      return { success: false, error: "Database is not configured." };
+      return { success: false, error: "Banco de dados não configurado." };
     }
     const msg = err instanceof Error ? err.message : String(err);
     if (msg.includes("unique") || msg.includes("duplicate")) {
       return {
         success: false,
-        error: "This gift has already been reserved.",
+        error: "Este presente já foi reservado.",
       };
     }
     return {
       success: false,
-      error: "Failed to reserve gift. Please try again.",
+      error: "Falha ao reservar presente. Por favor, tente novamente.",
     };
   }
 }
@@ -88,13 +88,13 @@ export async function deleteReservation(
       DELETE FROM reservations WHERE gift_id = ${giftId} AND user_uid = ${userUid}
     `;
     if (result.length === 0 && (result as { count?: number }).count === 0) {
-      return { success: false, error: "Reservation not found." };
+      return { success: false, error: "Reserva não encontrada." };
     }
     return { success: true };
   } catch {
     return {
       success: false,
-      error: "Failed to remove reservation. Please try again.",
+      error: "Falha ao remover reserva. Por favor, tente novamente.",
     };
   }
 }

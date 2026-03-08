@@ -4,8 +4,8 @@ import { AuthProvider } from "./components/AuthProvider";
 import { Header } from "./components/Header";
 
 export const metadata: Metadata = {
-  title: "Wedding Gift List",
-  description: "Select a gift from our wedding list",
+  title: "Lista de Presentes de Casamento",
+  description: "Escolha um presente da nossa lista de casamento",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className="antialiased">
         <AuthProvider>
           <Header />

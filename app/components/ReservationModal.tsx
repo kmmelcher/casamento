@@ -43,7 +43,7 @@ export function ReservationModal({
       await onConfirm();
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError(err instanceof Error ? err.message : "Algo deu errado.");
     } finally {
       setLoading(false);
     }
@@ -60,15 +60,15 @@ export function ReservationModal({
     >
       <div className="bg-white rounded-xl p-6 shadow-xl">
         <h3 className="text-lg font-semibold text-gray-900">
-          Reserve this gift?
+          Reservar este presente?
         </h3>
         <p className="text-gray-600 mt-2">
-          You are about to reserve{" "}
-          <span className="font-medium text-gray-900">{gift.title}</span>. This
-          will mark it as taken so no one else can select it.
+          Você está prestes a reservar{" "}
+          <span className="font-medium text-gray-900">{gift.title}</span>. Isso
+          vai marcá-lo como escolhido para que ninguém mais possa selecioná-lo.
         </p>
         <p className="text-gray-500 text-sm mt-2">
-          You can remove your reservation later from the My Reservations page.
+          Você pode remover sua reserva depois na página Minhas Reservas.
         </p>
 
         {error && <p className="text-sm text-red-600 mt-3">{error}</p>}
@@ -79,14 +79,14 @@ export function ReservationModal({
             disabled={loading}
             className="flex-1 rounded-lg bg-gray-900 text-white py-2.5 px-4 text-sm font-medium hover:bg-gray-800 disabled:opacity-50 transition"
           >
-            {loading ? "Reserving…" : "Confirm"}
+            {loading ? "Reservando…" : "Confirmar"}
           </button>
           <button
             onClick={onClose}
             disabled={loading}
             className="flex-1 rounded-lg border border-gray-300 py-2.5 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 transition"
           >
-            Cancel
+            Cancelar
           </button>
         </div>
       </div>

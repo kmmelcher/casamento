@@ -38,7 +38,7 @@ export function GiftCard({ gift, reservation }: GiftCardProps) {
   return (
     <>
       <article
-        className={`rounded-xl border bg-white shadow-sm overflow-hidden flex flex-col transition ${
+        className={`rounded-xl border bg-white shadow-sm overflow-hidden flex flex-col transition h-full ${
           isReserved
             ? "border-gray-200 opacity-75"
             : "border-gray-200 hover:shadow-md hover:border-gray-300 cursor-pointer"
@@ -69,18 +69,18 @@ export function GiftCard({ gift, reservation }: GiftCardProps) {
             {isReserved && (
               <div className="absolute inset-0 bg-white/50 flex items-center justify-center">
                 <span className="bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide">
-                  Reserved
+                  Reservado
                 </span>
               </div>
             )}
           </div>
         ) : (
           <div className="relative aspect-[4/3] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
-            No image
+            Sem imagem
             {isReserved && (
               <div className="absolute inset-0 bg-white/50 flex items-center justify-center">
                 <span className="bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide">
-                  Reserved
+                  Reservado
                 </span>
               </div>
             )}
@@ -96,12 +96,12 @@ export function GiftCard({ gift, reservation }: GiftCardProps) {
             {isReserved ? (
               <p className="text-sm text-gray-500 text-center">
                 {isOwnReservation
-                  ? "You reserved this gift"
-                  : "Already reserved"}
+                  ? "Você reservou este presente"
+                  : "Já reservado"}
               </p>
             ) : (
               <p className="text-sm text-gray-900 font-medium text-center">
-                Click to reserve
+                Clique para reservar
               </p>
             )}
           </div>

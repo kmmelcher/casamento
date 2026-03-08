@@ -59,16 +59,16 @@ export default function ReservationsPage() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <h2 className="text-xl font-semibold text-gray-900">
-          Sign in to view your reservations
+          Entre para ver suas reservas
         </h2>
         <p className="text-gray-600 mt-2">
-          You need to be signed in with Google to see your reserved gifts.
+          Você precisa estar conectado com o Google para ver seus presentes reservados.
         </p>
         <button
           onClick={signInWithGoogle}
           className="mt-6 rounded-lg bg-gray-900 text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition"
         >
-          Sign in with Google
+          Entrar com Google
         </button>
       </div>
     );
@@ -78,10 +78,10 @@ export default function ReservationsPage() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <h2 className="text-xl font-semibold text-gray-900">
-          No reservations yet
+          Nenhuma reserva ainda
         </h2>
         <p className="text-gray-600 mt-2">
-          Browse the gift list and click on a gift to reserve it.
+          Navegue pela lista de presentes e clique em um presente para reservá-lo.
         </p>
       </div>
     );
@@ -90,7 +90,7 @@ export default function ReservationsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h2 className="text-xl font-semibold text-gray-900 mb-6">
-        My Reservations
+        Minhas Reservas
       </h2>
       <ul className="space-y-4">
         {items.map(({ gift, reservation }) => (
@@ -110,7 +110,7 @@ export default function ReservationsPage() {
               </div>
             ) : (
               <div className="w-20 h-20 rounded-lg bg-gray-100 shrink-0 flex items-center justify-center text-gray-400 text-xs">
-                No image
+                Sem imagem
               </div>
             )}
             <div className="flex-1 min-w-0">
@@ -121,8 +121,8 @@ export default function ReservationsPage() {
                 {gift.description}
               </p>
               <p className="text-xs text-gray-400 mt-1">
-                Reserved on{" "}
-                {new Date(reservation.created_at).toLocaleDateString()}
+                Reservado em{" "}
+                {new Date(reservation.created_at).toLocaleDateString("pt-BR")}
               </p>
             </div>
             <button
@@ -130,7 +130,7 @@ export default function ReservationsPage() {
               disabled={removingId === reservation.gift_id}
               className="shrink-0 rounded-lg border border-red-200 text-red-600 px-4 py-2 text-sm font-medium hover:bg-red-50 disabled:opacity-50 transition"
             >
-              {removingId === reservation.gift_id ? "Removing…" : "Remove"}
+              {removingId === reservation.gift_id ? "Removendo…" : "Remover"}
             </button>
           </li>
         ))}

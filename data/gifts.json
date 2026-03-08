@@ -1,38 +1,38 @@
 [
   {
     "id": "gift-1",
-    "title": "Kitchen stand mixer",
-    "description": "A reliable stand mixer for baking and cooking.",
+    "title": "Batedeira planetária",
+    "description": "Uma batedeira confiável para assar e cozinhar.",
     "imageUrl": "https://images.unsplash.com/photo-1585515320314-9d42d3a0d0a8?w=400&h=300&fit=crop"
   },
   {
     "id": "gift-2",
-    "title": "Coffee machine",
-    "description": "Espresso and cappuccino machine for morning brews.",
+    "title": "Máquina de café",
+    "description": "Máquina de espresso e cappuccino para o café da manhã.",
     "imageUrl": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400&h=300&fit=crop"
   },
   {
     "id": "gift-3",
-    "title": "Picnic basket set",
-    "description": "Wicker basket with plates, glasses, and cutlery for two.",
+    "title": "Cesta de piquenique",
+    "description": "Cesta de vime com pratos, copos e talheres para dois.",
     "imageUrl": "https://images.unsplash.com/photo-1504281623087-1a6dd8f827c2?w=400&h=300&fit=crop"
   },
   {
     "id": "gift-4",
-    "title": "Honeymoon contribution",
-    "description": "Contribute to our honeymoon fund.",
+    "title": "Contribuição para lua de mel",
+    "description": "Contribua para o nosso fundo de lua de mel.",
     "imageUrl": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop"
   },
   {
     "id": "gift-5",
-    "title": "Board game collection",
-    "description": "A set of classic board games for game nights.",
+    "title": "Coleção de jogos de tabuleiro",
+    "description": "Um conjunto de jogos de tabuleiro clássicos para noites de jogos.",
     "imageUrl": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop"
   },
   {
     "id": "gift-6",
-    "title": "Wine rack",
-    "description": "Wooden wine rack holding 12 bottles.",
+    "title": "Adega de vinhos",
+    "description": "Adega de madeira para 12 garrafas.",
     "imageUrl": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&h=300&fit=crop"
   }
 ]

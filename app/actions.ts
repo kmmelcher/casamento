@@ -29,14 +29,14 @@ export async function reserveGift(
 ): Promise<ActionResult> {
   const decoded = await authenticateUser(idToken);
   if (!decoded) {
-    return { success: false, error: "Authentication failed. Please sign in again." };
+    return { success: false, error: "Falha na autenticação. Por favor, entre novamente." };
   }
 
   const result = await insertReservation(
     giftId,
     decoded.uid,
     decoded.email ?? null,
-    decoded.name ?? decoded.email ?? "Anonymous"
+    decoded.name ?? decoded.email ?? "Anônimo"
   );
 
   if (result.success) {
@@ -52,7 +52,7 @@ export async function unreserveGift(
 ): Promise<ActionResult> {
   const decoded = await authenticateUser(idToken);
   if (!decoded) {
-    return { success: false, error: "Authentication failed. Please sign in again." };
+    return { success: false, error: "Falha na autenticação. Por favor, entre novamente." };
   }
 
   const result = await deleteReservation(giftId, decoded.uid);

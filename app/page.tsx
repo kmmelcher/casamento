@@ -12,8 +12,7 @@ export default async function Home() {
     <main className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <p className="text-gray-600 mb-6">
-          Choose a gift and click to reserve it. Each gift can only be reserved
-          once.
+          Escolha um presente e clique para reservar.
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {gifts.map((gift) => (

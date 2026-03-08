@@ -13,21 +13,21 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="text-xl font-bold text-gray-900">
-            Wedding Gift List
+            Lista de Presentes
           </Link>
           <nav className="hidden sm:flex items-center gap-4 text-sm font-medium">
             <Link
               href="/"
               className={`transition ${pathname === "/" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
             >
-              Gifts
+              Presentes
             </Link>
             {user && (
               <Link
                 href="/reservations"
                 className={`transition ${pathname === "/reservations" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
               >
-                My Reservations
+                Minhas Reservas
               </Link>
             )}
           </nav>
@@ -54,7 +54,7 @@ export function Header() {
                 onClick={signOut}
                 className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
               >
-                Sign out
+                Sair
               </button>
             </>
           ) : (
@@ -68,7 +68,7 @@ export function Header() {
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
               </svg>
-              Sign in with Google
+              Entrar com Google
             </button>
           )}
         </div>
@@ -81,13 +81,13 @@ export function Header() {
             href="/"
             className={`transition ${pathname === "/" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
           >
-            Gifts
+            Presentes
           </Link>
           <Link
             href="/reservations"
             className={`transition ${pathname === "/reservations" ? "text-gray-900" : "text-gray-500 hover:text-gray-700"}`}
           >
-            My Reservations
+            Minhas Reservas
           </Link>
         </nav>
       )}
