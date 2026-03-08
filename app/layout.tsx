@@ -4,8 +4,8 @@ import { AuthProvider } from "./components/AuthProvider";
 import { Header } from "./components/Header";
 
 export const metadata: Metadata = {
-  title: "Lista de Presentes de Casamento",
-  description: "Escolha um presente da nossa lista de casamento",
+  title: "Casamento Kilian & Viviane",
+  description: "09.05.2026 — Lista de presentes e vaquinhas",
 };
 
 export default function RootLayout({
