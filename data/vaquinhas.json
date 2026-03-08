@@ -1,0 +1,26 @@
+[
+  {
+    "id": "vaquinha-1",
+    "title": "Sofá novo",
+    "description": "Um sofá confortável para a sala de estar do nosso novo lar.",
+    "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "vaquinha-2",
+    "title": "Geladeira",
+    "description": "Geladeira frost-free de duas portas para manter tudo fresquinho.",
+    "imageUrl": "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "vaquinha-3",
+    "title": "Televisão 65 polegadas",
+    "description": "Smart TV 4K para as noites de filme e séries juntos.",
+    "imageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=300&fit=crop"
+  },
+  {
+    "id": "vaquinha-4",
+    "title": "Máquina de lavar roupa",
+    "description": "Máquina de lavar automática para facilitar o dia a dia.",
+    "imageUrl": "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&h=300&fit=crop"
+  }
+]

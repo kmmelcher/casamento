@@ -5,6 +5,13 @@ export type Gift = {
   imageUrl?: string;
 };
 
+export type Vaquinha = {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl?: string;
+};
+
 export type Reservation = {
   id: number;
   gift_id: string;
