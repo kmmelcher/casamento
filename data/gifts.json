@@ -1,38 +1,122 @@
 [
   {
     "id": "gift-1",
-    "title": "Batedeira planetária",
-    "description": "Uma batedeira confiável para assar e cozinhar.",
-    "imageUrl": "https://images.unsplash.com/photo-1585515320314-9d42d3a0d0a8?w=400&h=300&fit=crop"
+    "title": "Cafeteira",
+    "description": "Uma cafeteira confiável para preparar o café da manhã.",
+    "imageUrl": "https://m.media-amazon.com/images/I/71cM7xwJqXL._AC_SL1500_.jpg"
   },
   {
     "id": "gift-2",
-    "title": "Máquina de café",
-    "description": "Máquina de espresso e cappuccino para o café da manhã.",
-    "imageUrl": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400&h=300&fit=crop"
+    "title": "Lençol de cama",
+    "description": "Um lençol de cama confortável para dormir bem.",
+    "imageUrl": "https://m.media-amazon.com/images/I/517NGrwgn6L._AC_SL1200_.jpg"
   },
   {
     "id": "gift-3",
-    "title": "Cesta de piquenique",
-    "description": "Cesta de vime com pratos, copos e talheres para dois.",
-    "imageUrl": "https://images.unsplash.com/photo-1504281623087-1a6dd8f827c2?w=400&h=300&fit=crop"
+    "title": "Liquidificador",
+    "description": "Um liquidificador confiável para preparar sucos e triturar alimentos.",
+    "imageUrl": "https://m.media-amazon.com/images/I/71KFAoTV+hL._AC_SL1500_.jpg"
   },
   {
     "id": "gift-4",
-    "title": "Contribuição para lua de mel",
-    "description": "Contribua para o nosso fundo de lua de mel.",
-    "imageUrl": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop"
+    "title": "Aspirador de pó",
+    "description": "Um aspirador de pó confiável para limpar a casa.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61m5wUE9XzL._AC_SL1500_.jpg"
   },
   {
     "id": "gift-5",
-    "title": "Coleção de jogos de tabuleiro",
-    "description": "Um conjunto de jogos de tabuleiro clássicos para noites de jogos.",
-    "imageUrl": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop"
+    "title": "Manta de sofá",
+    "description": "Uma manta de sofá confortável para relaxar.",
+    "imageUrl": "https://m.media-amazon.com/images/I/71eYIJn5HiL._AC_SL1299_.jpg"
   },
   {
     "id": "gift-6",
-    "title": "Adega de vinhos",
-    "description": "Adega de madeira para 12 garrafas.",
-    "imageUrl": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&h=300&fit=crop"
+    "title": "Conjunto toalha de banho",
+    "description": "Toalha de corpo e rosto para banho.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61G4yIUf0rL._AC_SL1000_.jpg"
+  },
+  {
+    "id": "gift-7",
+    "title": "Porta temperos",
+    "description": "Porta temperos para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61OG7XRQh5L._AC_SL1200_.jpg"
+  },
+  {
+    "id": "gift-8",
+    "title": "Colcha de cama",
+    "description": "Colcha de cama confortável para dormir bem.",
+    "imageUrl": "https://m.media-amazon.com/images/I/71mfV4zWauL._AC_SL1200_.jpg"
+  },
+  {
+    "id": "gift-9",
+    "title": "Faqueiro",
+    "description": "Faqueiro para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61viHSB7i4L._AC_SL1000_.jpg"
+  },
+  {
+    "id": "gift-10",
+    "title": "Jogo de pratos",
+    "description": "Jogo de pratos para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61DTHm7UXBL._AC_SL1000_.jpg"
+  },
+  {
+    "id": "gift-11",
+    "title": "Jogo de panelas",
+    "description": "Jogo de panelas para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/417b7SaQP8L._AC_SL1000_.jpg"
+  },
+  {
+    "id": "gift-12",
+    "title": "Abridor de vinho elétrico",
+    "description": "Para abrir vinhos facilmente.",
+    "imageUrl": "https://m.media-amazon.com/images/I/51TQ-fD6RjL._AC_SL1024_.jpg"
+  },
+  {
+    "id": "gift-13",
+    "title": "Escorredor de pratos",
+    "description": "Escorredor de prato para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61t0GZyKIhL._AC_.jpg"
+  },
+  {
+    "id": "gift-14",
+    "title": "Cabideiro de parede",
+    "description": "Cabideiro de parede para pendurar mochilas e bonés.",
+    "imageUrl": "https://m.media-amazon.com/images/I/41as6eMlcVL._AC_SL1024_.jpg"
+  },
+  {
+    "id": "gift-15",
+    "title": "Tapete de sala",
+    "description": "Tapete felpudo para sala de estar.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61PNNR6V1yL._AC_SL1024_.jpg"
+  },
+  {
+    "id": "gift-16",
+    "title": "Kit potes herméticos",
+    "description": "Potes herméticos de vidro para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/6141QRR9kyL._AC_SL1000_.jpg"
+  },
+  {
+    "id": "gift-17",
+    "title": "Boleira",
+    "description": "Boleira de vidro.",
+    "imageUrl": "https://m.media-amazon.com/images/I/61E5W2IFeQL._AC_SL1080_.jpg"
+  },
+  {
+    "id": "gift-18",
+    "title": "Cesto de roupas",
+    "description": "Cesto para guardar roupas.",
+    "imageUrl": "https://m.media-amazon.com/images/I/611TKEFK0UL._AC_.jpg"
+  },
+  {
+    "id": "gift-19",
+    "title": "Espremedor de frutas elétrico",
+    "description": "Para espremer frutas como limão e laranja para sucos e drinks.",
+    "imageUrl": "https://m.media-amazon.com/images/I/71DEK6jSqGL._AC_SL1500_.jpg"
+  },
+  {
+    "id": "gift-20",
+    "title": "Chaleira de vidro",
+    "description": "Chaleira de vidro com infusor para cozinha.",
+    "imageUrl": "https://m.media-amazon.com/images/I/41bn4ocJyFS._AC_SL1000_.jpg"
   }
 ]
