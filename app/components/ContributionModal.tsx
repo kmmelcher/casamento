@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { Vaquinha } from "@/lib/types";
 
-const PIX_KEY = "83987829419";
+const PIX_KEY = "83986650905";
 
 function PixKey() {
   const [copied, setCopied] = useState(false);
