@@ -2,37 +2,37 @@
   {
     "id": "gift-1",
     "title": "Cafeteira",
-    "description": "Uma cafeteira confiável para preparar o café da manhã.",
+    "description": "Uma cafeteira para preparar o café da manhã.",
     "imageUrl": "https://m.media-amazon.com/images/I/71cM7xwJqXL._AC_SL1500_.jpg"
   },
   {
     "id": "gift-2",
     "title": "Lençol de cama 1",
-    "description": "Um lençol de cama confortável para dormir bem.",
+    "description": "Um lençol de cama para dormir bem.",
     "imageUrl": "https://m.media-amazon.com/images/I/517NGrwgn6L._AC_SL1200_.jpg"
   },
   {
     "id": "gift-3",
     "title": "Lençol de cama 2",
-    "description": "Um lençol de cama confortável para dormir bem.",
+    "description": "Um lençol de cama para dormir bem.",
     "imageUrl": "https://m.media-amazon.com/images/I/61sLk9-jtIL._AC_SL1000_.jpg"
   },
   {
     "id": "gift-4",
     "title": "Liquidificador",
-    "description": "Um liquidificador confiável para preparar sucos e triturar alimentos.",
+    "description": "Um liquidificador para preparar sucos e triturar alimentos.",
     "imageUrl": "https://m.media-amazon.com/images/I/71KFAoTV+hL._AC_SL1500_.jpg"
   },
   {
     "id": "gift-5",
     "title": "Aspirador de pó",
-    "description": "Um aspirador de pó confiável para limpar a casa.",
+    "description": "Um aspirador de pó para limpar a casa.",
     "imageUrl": "https://m.media-amazon.com/images/I/61m5wUE9XzL._AC_SL1500_.jpg"
   },
   {
     "id": "gift-6",
     "title": "Manta de sofá",
-    "description": "Uma manta de sofá confortável para relaxar.",
+    "description": "Uma manta para cobrir o sofá.",
     "imageUrl": "https://m.media-amazon.com/images/I/71eYIJn5HiL._AC_SL1299_.jpg"
   },
   {
@@ -50,7 +50,7 @@
   {
     "id": "gift-9",
     "title": "Colcha de cama",
-    "description": "Colcha de cama confortável para dormir bem.",
+    "description": "Colcha de cama para dormir aquecido.",
     "imageUrl": "https://m.media-amazon.com/images/I/71mfV4zWauL._AC_SL1200_.jpg"
   },
   {
