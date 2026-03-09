@@ -7,7 +7,7 @@ type ReservationModalProps = {
   gift: Gift;
   open: boolean;
   onClose: () => void;
-  onConfirm: () => Promise<void>;
+  onConfirm: (message: string) => Promise<void>;
 };
 
 export function ReservationModal({
@@ -18,6 +18,7 @@ export function ReservationModal({
 }: ReservationModalProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export function ReservationModal({
     setLoading(true);
     setError("");
     try {
-      await onConfirm();
+      await onConfirm(message);
       onClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Algo deu errado.");
@@ -70,6 +71,14 @@ export function ReservationModal({
         <p className="text-gray-500 text-sm mt-2">
           Você pode remover sua reserva depois na página Minhas Reservas.
         </p>
+
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Deixe uma mensagem para nós (opcional)"
+          rows={3}
+          className="mt-4 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none"
+        />
 
         {error && <p className="text-sm text-red-600 mt-3">{error}</p>}
 

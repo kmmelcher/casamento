@@ -30,10 +30,10 @@ export function GiftCard({ gift, reservation }: GiftCardProps) {
     setModalOpen(true);
   }
 
-  async function handleConfirmReservation() {
+  async function handleConfirmReservation(message: string) {
     const token = await getIdToken();
     if (!token) throw new Error("Not authenticated");
-    const result = await reserveGift(gift.id, token);
+    const result = await reserveGift(gift.id, token, message || undefined);
     if (!result.success) throw new Error(result.error);
     router.refresh();
   }

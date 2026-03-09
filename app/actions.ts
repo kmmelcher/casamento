@@ -25,7 +25,8 @@ async function authenticateUser(idToken: string) {
 
 export async function reserveGift(
   giftId: string,
-  idToken: string
+  idToken: string,
+  message?: string
 ): Promise<ActionResult> {
   const decoded = await authenticateUser(idToken);
   if (!decoded) {
@@ -36,7 +37,8 @@ export async function reserveGift(
     giftId,
     decoded.uid,
     decoded.email ?? null,
-    decoded.name ?? decoded.email ?? "Anônimo"
+    decoded.name ?? decoded.email ?? "Anônimo",
+    message
   );
 
   if (result.success) {
